@@ -1,0 +1,66 @@
+ ~~ Licensed to the Apache Software Foundation (ASF) under one
+ ~~ or more contributor license agreements.  See the NOTICE file
+ ~~ distributed with this work for additional information
+ ~~ regarding copyright ownership.  The ASF licenses this file
+ ~~ to you under the Apache License, Version 2.0 (the
+ ~~ "License"); you may not use this file except in compliance
+ ~~ with the License.  You may obtain a copy of the License at
+ ~~
+ ~~   http://www.apache.org/licenses/LICENSE-2.0
+ ~~
+ ~~ Unless required by applicable law or agreed to in writing,
+ ~~ software distributed under the License is distributed on an
+ ~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~~ KIND, either express or implied.  See the License for the
+ ~~ specific language governing permissions and limitations
+ ~~ under the License.
+
+ -----
+ Usage
+ -----
+
+Usage
+
+  The plugin offers goals for updating the versions of artifacts referenced in
+  a maven pom.xml file.
+
+* Basic Usage
+
+  Maven 2.0 does not currently support re-reading modifications of the pom.xml within the one invokation of Maven.
+  As this plugin modifies the pom.xml file, you need to run it separately from any other goals or life-cycle phases.
+
+** Updating the parent version
+
+  To update the parent version of your pom to the latest available, just invoke the update-parent goal.
+
+---
+mvn versions:update-parent
+---
+
+  A more detailed example can be found {{{examples/update-parent.html} here}}.
+
+** Checking for new versions of plugins
+
+  To get information about newer versions of plugins that you are using in your build, just invoke the
+  display-plugin-updates goal.
+
+---
+mvn version:display-plugin-updates
+---
+
+  A more detailed example can be found {{{examples/display-plugin-updates.html} here}}.
+
+** Checking for new versions of dependencies
+
+  To get information about newer versions of dependencies that you are using in your build, just invoke the
+  display-dependency-updates goal.
+
+---
+mvn version:display-dependency-updates
+---
+
+  A more detailed example can be found {{{examples/display-dependency-updates.html} here}}.
+
+** Updating versions specified by properties
+
+  This goal helps when you use properties to define versions.  Please see the example {{{examples/update-properties.html}here}}
